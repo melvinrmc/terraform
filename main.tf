@@ -1,8 +1,8 @@
 provider "aws" {
-  region = "eu-central-1"
+  region = "us-east-1"
 }
  
 resource "aws_instance" "kaeptn-eichhorn" {
-  ami = "ami-13b8337c"
+  ami = "ami-04b9e92b5572fa0d1"
   instance_type = "t2.micro"
 }
