@@ -7,11 +7,11 @@ resource "aws_instance" "kaeptn-eichhorn" {
   instance_type = "t2.micro"
 }
 
-variable "my_id_rsa" {
+variable "MY_ID_RSA" {
   type = string  
 }
 
 resource "aws_key_pair" "deployer" {
   key_name   = "deployer-key"
-  public_key = var.my_id_rsa
+  public_key = var.MY_ID_RSA
 }
