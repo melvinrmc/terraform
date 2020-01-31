@@ -8,8 +8,7 @@ resource "aws_instance" "kaeptn-eichhorn" {
 }
 
 variable "my_id_rsa" {
-  type = string
-  default = TF_VAR_MY_ID_RSA
+  type = string  
 }
 
 resource "aws_key_pair" "deployer" {
