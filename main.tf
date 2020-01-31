@@ -9,5 +9,5 @@ resource "aws_instance" "kaeptn-eichhorn" {
 
 resource "aws_key_pair" "deployer" {
   key_name   = "deployer-key"
-  public_key = TF_VAR_my_id_rsa_dot_pub
+  public_key = "TF_VAR_MY_ID_RSA"
 }
