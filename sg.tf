@@ -4,10 +4,20 @@ resource "aws_security_group" "allow_ssh" {
   vpc_id      = "vpc-a5f829c1"
 
   ingress {
-    # TLS (change to whatever ports you need)
+    # SSH-TCP (change to whatever ports you need)
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
+    # Please restrict your ingress to only necessary IPs and ports.
+    # Opening to 0.0.0.0/0 can lead to security vulnerabilities.
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  
+  ingress {
+    # PING-ICMP (from_port and to_port should be the ICMP Protocol Numbers that is 1)
+    from_port   = 1
+    to_port     = 1
+    protocol    = "icmp"
     # Please restrict your ingress to only necessary IPs and ports.
     # Opening to 0.0.0.0/0 can lead to security vulnerabilities.
     cidr_blocks = ["0.0.0.0/0"]
