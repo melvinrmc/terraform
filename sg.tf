@@ -14,12 +14,10 @@ resource "aws_security_group" "allow_ssh" {
   }
   
   ingress {
-    # PING-ICMP (from_port and to_port should be the ICMP Protocol Numbers that is 1)
-    from_port   = 1
-    to_port     = 1
-    protocol    = "icmp"
-    # Please restrict your ingress to only necessary IPs and ports.
-    # Opening to 0.0.0.0/0 can lead to security vulnerabilities.
+    # PING-ICMP (from_port and to_port should be the ICMP Protocol Numbers icmp-parameters )
+    from_port = 8
+    to_port = 0
+    protocol = "icmp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
