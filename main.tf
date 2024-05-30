@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-east-1"
 }
  
-resource "aws_instance" "kaeptn-eichhorn" {
+resource "aws_instance" "master" {
   ami = "ami-02eac2c0129f6376b"
   instance_type = "t2.medium"
   key_name = aws_key_pair.deployer.key_name
